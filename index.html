@@ -378,7 +378,8 @@
             <p style="color:var(--text-muted); font-size:14px; margin-top: 4px;">Search and deploy parameters instantly.</p>
             
             <div class="search-box-container">
-                <input type="text" id="scriptSearch" class="search-input" placeholder="Enter Target Game Name (e.g. Blox Fruits, Blade Ball)..." onkeypress="handleKeyPress(event)">
+                <!-- මෙන්න මෙතනට oninput ඇතුලත් කරලා තියෙන්නේ -->
+                <input type="text" id="scriptSearch" class="search-input" placeholder="Enter Target Game Name (e.g. Blox Fruits, Blade Ball)..." oninput="searchScripts()">
                 <button class="search-btn" onclick="searchScripts()">🔍</button>
             </div>
 
@@ -391,127 +392,137 @@
                     <div class="card-desc" style="margin-bottom:0;">Features: Level Auto Farm, Sea Events, Raid Teleports, Fruit Sniper.</div>
                     <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_Start'))()</div>
                     <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-                
 				</div>
+
 				<!-- Redz Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits redz hub no key anti ban auto raid pc mobile">
-    <div class="script-title">Blox Fruits - Redz Hub Script</div>
-    <div class="card-desc" style="margin-bottom:0;">Best for long auto raid sessions — runs with anti-ban protection so it stays undetected even when farming for hours.<br><span style="color:#777; font-size:12px;">Tags: No Key, Anti Ban, Auto Raid, PC + Mobile</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/tIredz/Scripts/refs/heads/main/main.luau"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <div class="script-card script-entry" data-keywords="blox fruits redz hub no key anti ban auto raid pc mobile">
+                    <div class="script-title">Blox Fruits - Redz Hub Script</div>
+                    <div class="card-desc" style="margin-bottom:0;">Best for long auto raid sessions — runs with anti-ban protection so it stays undetected even when farming for hours.<br><span style="color:#777; font-size:12px;">Tags: No Key, Anti Ban, Auto Raid, PC + Mobile</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/tIredz/Scripts/refs/heads/main/main.luau"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- HoHo Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits hoho hub auto quest auto fly zero lag">
-    <div class="script-title">Blox Fruits - HoHo Hub Script</div>
-    <div class="card-desc" style="margin-bottom:0;">Handles quests and island travel automatically — best pick if you want smooth, lag-free gameplay without touching the keyboard.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Quest, Auto Fly, Low Lag</span></div>
-    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- HoHo Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits hoho hub auto quest auto fly zero lag">
+                    <div class="script-title">Blox Fruits - HoHo Hub Script</div>
+                    <div class="card-desc" style="margin-bottom:0;">Handles quests and island travel automatically — best pick if you want smooth, lag-free gameplay without touching the keyboard.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Quest, Auto Fly, Low Lag</span></div>
+                    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Gravity Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits gravity hub auto farm sea 3 boss kill">
-    <div class="script-title">Blox Fruits - Gravity Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Optimized for Third Sea grinding — automatically kills bosses and farms enemies in the hardest and most rewarding zone.<br><span style="color:#777; font-size:12px;">Tags: No Key, Sea 3 Optimized, Boss Kill, Auto Farm</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <div class="script-card script-entry" data-keywords="quantum onyx qtonyx loader system setup">
+                    <div class="script-title">Quantum Onyx - Interface Hub</div>
+                    <div class="card-desc" style="margin-bottom:10px;">Features: Custom UI Framework, Vector Optimization, Parameter Sync Controls.</div>
+                    <div class="script-box">-- [RB.ALL] Quantum Onyx Runtime Template Loaded Successfully</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Interface Code</button>
+                    <div style="margin-top: 12px; text-align: left;">
+                        <a href="https://discord.com" target="_blank" class="btn-link" style="display: inline-block; width: auto; padding: 6px 16px; background: #5865F2; border: none; font-size: 12px; box-shadow: 0 0 10px rgba(88, 101, 242, 0.4);">Join Discord Server</a>
+                    </div>
+                </div>
 
-<!-- Blue X Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits blue x hub max level grind exp farm">
-    <div class="script-title">Blox Fruits - Blue X Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Built specifically to reach the level 2800 cap as fast as possible — automates EXP farming on the most efficient enemy routes.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, EXP Farm, Level 2800</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Gravity Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits gravity hub auto farm sea 3 boss kill">
+                    <div class="script-title">Blox Fruits - Gravity Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Optimized for Third Sea grinding — automatically kills bosses and farms enemies in the hardest and most rewarding zone.<br><span style="color:#777; font-size:12px;">Tags: No Key, Sea 3 Optimized, Boss Kill, Auto Farm</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Leaf Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits leaf hub mobile optimized android auto farm">
-    <div class="script-title">Blox Fruits - Leaf Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Lightweight and mobile-first — runs smoothly on low-end Android devices where heavier scripts lag or crash.<br><span style="color:#777; font-size:12px;">Tags: No Key, Mobile Optimized, Android, Auto Farm</span></div>
-    <div class="script-box">repeat wait() until game:IsLoaded() and game.Players.LocalPlayer loadstring(game:HttpGet("https://leaf-zeta.onrender.com/api/script"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Blue X Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits blue x hub max level grind exp farm">
+                    <div class="script-title">Blox Fruits - Blue X Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Built specifically to reach the level 2800 cap as fast as possible — automates EXP farming on the most efficient enemy routes.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, EXP Farm, Level 2800</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Maru Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits maru hub marines specific team auto farm">
-    <div class="script-title">Blox Fruits - Maru Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Only script that sets your faction to Marines before auto farming — faster progression since Marine quests and spawns differ from Pirates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Marines Specific, Team Auto Farm</span></div>
-    <div class="script-box">getgenv().Team = "Marines" loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/KimP/refs/heads/main/MaruHub"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Leaf Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits leaf hub mobile optimized android auto farm">
+                    <div class="script-title">Blox Fruits - Leaf Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Lightweight and mobile-first — runs smoothly on low-end Android devices where heavier scripts lag or crash.<br><span style="color:#777; font-size:12px;">Tags: No Key, Mobile Optimized, Android, Auto Farm</span></div>
+                    <div class="script-box">repeat wait() until game:IsLoaded() and game.Players.LocalPlayer loadstring(game:HttpGet("https://leaf-zeta.onrender.com/api/script"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Astral Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits astral hub freeze trade auto accept anti scam">
-    <div class="script-title">Blox Fruits - Astral Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Made for traders — freeze trade locks a deal mid-offer so the other player cannot swap items and scam you.<br><span style="color:#777; font-size:12px;">Tags: No Key, Freeze Trade, Auto Accept Trade, Anti Scam</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/AstralHub/main/Main.lua", true))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Maru Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits maru hub marines specific team auto farm">
+                    <div class="script-title">Blox Fruits - Maru Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Only script that sets your faction to Marines before auto farming — faster progression since Marine quests and spawns differ from Pirates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Marines Specific, Team Auto Farm</span></div>
+                    <div class="script-box">getgenv().Team = "Marines" loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/KimP/refs/heads/main/MaruHub"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Speed Hub X -->
-<div class="script-card script-entry" data-keywords="blox fruits speed hub x esp speed hack pvp">
-    <div class="script-title">Blox Fruits - Speed Hub X</div>
-    <div class="card-desc" style="margin-bottom:0;">PvP-focused script with ESP wallhack and speed boost — spot enemies through walls and close distance instantly.<br><span style="color:#777; font-size:12px;">Tags: No Key, ESP, Speed Hack, PvP</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Astral Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits astral hub freeze trade auto accept anti scam">
+                    <div class="script-title">Blox Fruits - Astral Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Made for traders — freeze trade locks a deal mid-offer so the other player cannot swap items and scam you.<br><span style="color:#777; font-size:12px;">Tags: No Key, Freeze Trade, Auto Accept Trade, Anti Scam</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/AstralHub/main/Main.lua", true))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Night Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits night hub fruit rain event ready auto collect">
-    <div class="script-title">Blox Fruits - Night Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Made for Fruit Rain events — detects every spawn instantly and queues teleports so you collect more than any manual player can.<br><span style="color:#777; font-size:12px;">Tags: No Key, Fruit Rain, Event Ready, Auto Collect</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/NIGHTHUBONTOP/Main/main/NightHub.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Speed Hub X -->
+                <div class="script-card script-entry" data-keywords="blox fruits speed hub x esp speed hack pvp">
+                    <div class="script-title">Blox Fruits - Speed Hub X</div>
+                    <div class="card-desc" style="margin-bottom:0;">PvP-focused script with ESP wallhack and speed boost — spot enemies through walls and close distance instantly.<br><span style="color:#777; font-size:12px;">Tags: No Key, ESP, Speed Hack, PvP</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Quantum Onyx Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits quantum onyx hub universal all servers auto update">
-    <div class="script-title">Blox Fruits - Quantum Onyx Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Works on all server types and auto-updates after game patches — no manual fixes needed every time Blox Fruits updates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Universal, All Servers, Auto Update</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/flashy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Night Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits night hub fruit rain event ready auto collect">
+                    <div class="script-title">Blox Fruits - Night Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Made for Fruit Rain events — detects every spawn instantly and queues teleports so you collect more than any manual player can.<br><span style="color:#777; font-size:12px;">Tags: No Key, Fruit Rain, Event Ready, Auto Collect</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/NIGHTHUBONTOP/Main/main/NightHub.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Delta Script -->
-<div class="script-card script-entry" data-keywords="blox fruits delta script pc android ios executor">
-    <div class="script-title">Blox Fruits - Delta Script</div>
-    <div class="card-desc" style="margin-bottom:0;">One script for all platforms inside Delta executor — beginners don't need separate versions for PC, Android, or iOS.<br><span style="color:#777; font-size:12px;">Tags: No Key, Delta Executor, PC + Android + iOS</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Quantum Onyx Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits quantum onyx hub universal all servers auto update">
+                    <div class="script-title">Blox Fruits - Quantum Onyx Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Works on all server types and auto-updates after game patches — no manual fixes needed every time Blox Fruits updates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Universal, All Servers, Auto Update</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/flashy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- jjSploit Script -->
-<div class="script-card script-entry" data-keywords="blox fruits jjsploit free executor beginner">
-    <div class="script-title">Blox Fruits - jjSploit Script</div>
-    <div class="card-desc" style="margin-bottom:0;">Fully compatible with jjSploit — the most popular free executor — easiest entry point for budget players new to scripting.<br><span style="color:#777; font-size:12px;">Tags: No Key, jjSploit, Free Executor, Beginner</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/thantzy/thanhub/refs/heads/main/thanv1"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Delta Script -->
+                <div class="script-card script-entry" data-keywords="blox fruits delta script pc android ios executor">
+                    <div class="script-title">Blox Fruits - Delta Script</div>
+                    <div class="card-desc" style="margin-bottom:0;">One script for all platforms inside Delta executor — beginners don't need separate versions for PC, Android, or iOS.<br><span style="color:#777; font-size:12px;">Tags: No Key, Delta Executor, PC + Android + iOS</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Bacon Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits bacon hub max level grind fruit sniper auto collect">
-    <div class="script-title">Blox Fruits - Bacon Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Three features in one — max level grinder, fruit sniper, and auto collect — the most complete all-in-one script on this list.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, Fruit Sniper, Auto Collect</span></div>
-    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/BaconScriptHub/BaconHub/main/New-BaconHub.lua.txt'))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- jjSploit Script -->
+                <div class="script-card script-entry" data-keywords="blox fruits jjsploit free executor beginner">
+                    <div class="script-title">Blox Fruits - jjSploit Script</div>
+                    <div class="card-desc" style="margin-bottom:0;">Fully compatible with jjSploit — the most popular free executor — easiest entry point for budget players new to scripting.<br><span style="color:#777; font-size:12px;">Tags: No Key, jjSploit, Free Executor, Beginner</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/thantzy/thanhub/refs/heads/main/thanv1"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Teddy Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits teddy hub auto kill instant teleport auto trade">
-    <div class="script-title">Blox Fruits - Teddy Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Best for players who do both combat and trading — auto kill handles fights while teleport lets you respond to trade requests from anywhere.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Kill, Instant Teleport, Auto Trade</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Bacon Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits bacon hub max level grind fruit sniper auto collect">
+                    <div class="script-title">Blox Fruits - Bacon Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Three features in one — max level grinder, fruit sniper, and auto collect — the most complete all-in-one script on this list.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, Fruit Sniper, Auto Collect</span></div>
+                    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/BaconScriptHub/BaconHub/main/New-BaconHub.lua.txt'))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
-<!-- Vxeze Hub -->
-<div class="script-card script-entry" data-keywords="blox fruits vxeze hub auto collect auto accept trade fruit inventory">
-    <div class="script-title">Blox Fruits - Vxeze Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Monitors the map for fruit spawns and collects them automatically — perfect for building a fruit inventory while AFK.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Collect, Auto Accept Trade, Fruit Inventory</span></div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/VxezeHubMain"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
+                <!-- Teddy Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits teddy hub auto kill instant teleport auto trade">
+                    <div class="script-title">Blox Fruits - Teddy Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Best for players who do both combat and trading — auto kill handles fights while teleport lets you respond to trade requests from anywhere.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Kill, Instant Teleport, Auto Trade</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub.lua"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
+
+                <!-- Vxeze Hub -->
+                <div class="script-card script-entry" data-keywords="blox fruits vxeze hub auto collect auto accept trade fruit inventory">
+                    <div class="script-title">Blox Fruits - Vxeze Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Monitors the map for fruit spawns and collects them automatically — perfect for building a fruit inventory while AFK.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Collect, Auto Accept Trade, Fruit Inventory</span></div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/VxezeHubMain"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
 
                 <!-- Blade Ball Script -->
                 <div class="script-card script-entry" data-keywords="blade ball redz hub auto parry block">
@@ -528,7 +539,6 @@
                     <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()</div>
                     <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
                 </div>
-
             </div>
         </div>
 
@@ -538,27 +548,27 @@
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Arceus X</span><span class="badge mobile">Mobile</span></div>
                 <div class="card-desc">Popular Android Roblox exploit with built-in community features.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://arceusx.net/" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Delta</span><span class="badge mobile">Mobile</span></div>
                 <div class="card-desc">Highly stable custom execution container for Android devices.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://delta-executor.com/" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">CodeX</span><span class="badge mobile">Mobile</span></div>
                 <div class="card-desc">Smooth UI design with constant patches for Android and iOS bypass.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://www.codex.lol/" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Cubix</span><span class="badge mobile">Mobile</span></div>
                 <div class="card-desc">Rising modern keyless/easy key executor built for mobile users.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://cubixexecutor.com/" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Nebula</span><span class="badge mobile">Mobile</span></div>
                 <div class="card-desc">Secure environment optimized for executing heavy script setups on mobile.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="Nebula" target="_blank" class="btn-link">Download</a>
             </div>
         </div>
 
@@ -568,22 +578,22 @@
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Solara</span><span class="badge pc">Windows</span></div>
                 <div class="card-desc">Popular level 3 Windows executor providing stable execution framework.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Argon</span><span class="badge pc">Windows</span></div>
                 <div class="card-desc">Performance oriented injector focusing on custom script loading mechanics.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://argon.wiki/" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Zorara</span><span class="badge pc">Windows</span></div>
                 <div class="card-desc">Clean UI and optimized memory utilization for fluid background execution.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="?" target="_blank" class="btn-link">Download</a>
             </div>
             <div class="executor-card">
                 <div class="card-header"><span class="card-title">Xeno</span><span class="badge pc">Windows</span></div>
                 <div class="card-desc">Feature-rich environment wrapper built with external safety integrations.</div>
-                <a href="#" target="_blank" class="btn-link">Download</a>
+                <a href="https://www.xeno.now/" target="_blank" class="btn-link">Download</a>
             </div>
         </div>
 
@@ -615,56 +625,11 @@
                 <div class="card-desc">Highly utilized free tool from the past desktop bypass waves.</div>
                 <a href="#" class="btn-link disabled">Patched</a>
             </div>
-			<!-- Pet Simulator 99 Card -->
-<div class="script-card script-entry" data-keywords="pet simulator 99 ps99 auto farm auto hatch gems">
-    <div class="script-title">Pet Simulator 99 - Redz Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Features: Auto Farm, Auto Hatch Eggs, Collect Gems, Enchants Manager.</div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/REDZ711/PetSimulator99/main/NewUpdate"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
-
-<!-- King Legacy Card -->
-<div class="script-card script-entry" data-keywords="king legacy kl auto farm sea map fruits">
-    <div class="script-title">King Legacy - Hoho Hub Mobile</div>
-    <div class="card-desc" style="margin-bottom:0;">Features: Level Farm, Auto Dungeon, Teleport to Islands, Fruit Finder.</div>
-    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/KingLegacy'))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
-
-<!-- Roblox BedWars Card -->
-<div class="script-card script-entry" data-keywords="bedwars vape v4 fly killaura speed hack">
-    <div class="script-title">BedWars - Vape V4 (Community Edition)</div>
-    <div class="card-desc" style="margin-bottom:0;">Features: KillAura, Infinite Fly, Long Jump, Auto Buy, Speed Exploits.</div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewGui.lua"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
-
-<!-- Shindo Life Card -->
-<div class="script-card script-entry" data-keywords="shindo life shinobi life auto farm boss rank up">
-    <div class="script-title">Shindo Life - Premier Hub</div>
-    <div class="card-desc" style="margin-bottom:0;">Features: Auto Quest, Green Scroll Farm, Boss Teleport, Rank Up Loader.</div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/PremierHub/Shindo/main/Source"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
-
-<!-- Adopt Me Card -->
-<div class="script-card script-entry" data-keywords="adopt me auto farm money baby auto age">
-    <div class="script-title">Adopt Me - IceHub V2</div>
-    <div class="card-desc" style="margin-bottom:0;">Features: Auto Full Grown Pet, Auto Money Farm, Baby Auto Farm, Teleports.</div>
-    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Icey99/AdoptMeHub/main/IceHub"))()</div>
-    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
-</div>
-        </div>
-
+			
+                    </div>
     </div>
 
     <script>
-        function handleKeyPress(event) {
-            if (event.key === "Enter") {
-                searchScripts();
-            }
-        }
-
         function searchScripts() {
             const query = document.getElementById('scriptSearch').value.toLowerCase().trim();
             const container = document.getElementById('scriptsResults');
