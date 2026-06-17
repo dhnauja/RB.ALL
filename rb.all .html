@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB.ALL - Ultimate Roblox Resources</title>
+    <style>
+        :root {
+            --bg-main: #050507;
+            --bg-card: rgba(15, 15, 25, 0.55);
+            --bg-search: rgba(25, 20, 35, 0.65);
+            --accent-crimson: #ff3b1f;
+            --accent-orange: #ff7300;
+            --text-main: #ffffff;
+            --text-muted: #9fa6b5;
+            --border-glow: linear-gradient(135deg, rgba(255, 59, 31, 0.4), rgba(255, 115, 0, 0.15));
+            --blue-link: #ff6c57;
+            --android-color: #3ddc84;
+            --windows-color: #0078d4;
+            --legacy-color: #7a1d1d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            padding: 25px 20px 80px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* VIDEO BACKGROUND STYLING */
+        .video-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -3;
+            overflow: hidden;
+        }
+        
+        .video-bg-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 5, 7, 0.75);
+            z-index: -2;
+        }
+
+        /* SCANLINE & NOISE EFFECT */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 6px 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* INTERACTIVE GLOWING BACKGROUND ORBS */
+        .glow-orb {
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 59, 31, 0.2) 0%, rgba(0,0,0,0) 70%);
+            z-index: -2;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+        .orb-1 { top: 10%; left: -100px; animation: floatOrb 12s infinite alternate; }
+        .orb-2 { bottom: 15%; right: -100px; background: radial-gradient(circle, rgba(255, 115, 0, 0.15) 0%, rgba(0,0,0,0) 70%); animation: floatOrb 16s infinite alternate-reverse; }
+
+        @keyframes floatOrb {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(40px) scale(1.1); }
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Top Header & Logo */
+        header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 35px;
+        }
+
+        .main-logo {
+            font-size: 72px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px rgba(255, 59, 31, 0.7), 0 0 40px rgba(255, 115, 0, 0.3);
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        /* SCRIPTS SEARCH SECTION (GLASSMORPHISM) */
+        .search-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 59, 31, 0.25);
+            border-radius: 16px;
+            padding: 40px 25px;
+            text-align: center;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.1);
+        }
+
+        .search-section h2 {
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 59, 31, 0.4);
+            font-style: italic;
+        }
+
+        .search-box-container {
+            position: relative;
+            max-width: 650px;
+            margin: 20px auto 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 28px;
+            padding-right: 65px;
+            background: var(--bg-search);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-crimson);
+            box-shadow: 0 0 15px rgba(255, 59, 31, 0.35);
+            background: rgba(25, 20, 35, 0.85);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--accent-crimson);
+            cursor: pointer;
+            font-size: 20px;
+            transition: transform 0.2s;
+        }
+        .search-btn:hover { transform: translateY(-50%) scale(1.1); }
+
+        /* Scripts Results Container */
+        .scripts-results-container {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .script-card {
+            background: rgba(10, 10, 15, 0.85);
+            border: 1px solid rgba(255, 115, 0, 0.25);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .script-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--blue-link);
+            margin-bottom: 6px;
+            text-shadow: 0 0 8px rgba(255, 108, 87, 0.3);
+        }
+
+        .script-box {
+            background-color: #030305;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12.5px;
+            color: #ff9d00;
+            overflow-x: auto;
+            margin: 14px 0;
+            white-space: nowrap;
+        }
+
+        .btn-copy {
+            background: linear-gradient(90deg, #ff3b1f, #ff7300);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .btn-copy:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        .no-results {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent-crimson);
+            padding-left: 12px;
+            text-shadow: 0 0 10px rgba(255, 59, 31, 0.3);
+        }
+        
+        .section-title.legacy {
+            border-left-color: rgba(255,255,255,0.3);
+            color: #777;
+        }
+
+        /* EXECUTORS GRID SYSTEM */
+        .executors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+            margin-bottom: 20px;
+        }
+
+        .executor-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            position: relative;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .executor-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 59, 31, 0.5);
+            box-shadow: 0 12px 25px rgba(255, 59, 31, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .card-title {
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            font-size: 10px;
+            padding: 4px 9px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge.mobile { background-color: var(--android-color); color: #000; }
+        .badge.pc { background-color: var(--windows-color); color: #fff; }
+        .badge.legacy { background-color: var(--legacy-color); color: #fff; }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        .btn-link:hover {
+            background: var(--accent-crimson);
+            border-color: var(--accent-crimson);
+            box-shadow: 0 0 12px rgba(255, 59, 31, 0.5);
+        }
+        
+        .btn-link.disabled {
+            border-color: rgba(255,255,255,0.05);
+            color: #444;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIDEO BACKGROUND ELEMENTS -->
+    <div class="video-bg-container">
+        <video autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-subway-station-with-red-neon-lights-43953-large.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- BACKGROUND AMBIENT ORBS -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="main-container">
+        
+        <!-- HEADER -->
+        <header>
+            <div class="main-logo">RB.ALL</div>
+        </header>
+
+        <!-- 1. SCRIPTS SEARCH ENGINE -->
+        <div class="search-section">
+            <h2>RB.ALL DATABASE ENGINE</h2>
+            <p style="color:var(--text-muted); font-size:14px; margin-top: 4px;">Search and deploy parameters instantly.</p>
+            
+            <div class="search-box-container">
+                <input type="text" id="scriptSearch" class="search-input" placeholder="Enter Target Game Name (e.g. Blox Fruits, Blade Ball)..." onkeypress="handleKeyPress(event)">
+                <button class="search-btn" onclick="searchScripts()">🔍</button>
+            </div>
+
+            <!-- SEARCH RESULTS AREA -->
+            <div class="scripts-results-container" id="scriptsResults">
+                
+                <!-- Blox Fruits Script -->
+                <div class="script-card script-entry" data-keywords="blox fruits hoho hub auto farm sea">
+                    <div class="script-title">Blox Fruits - Hoho Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Features: Level Auto Farm, Sea Events, Raid Teleports, Fruit Sniper.</div>
+                    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_Start'))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                
+				</div>
+				<!-- Redz Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits redz hub no key anti ban auto raid pc mobile">
+    <div class="script-title">Blox Fruits - Redz Hub Script</div>
+    <div class="card-desc" style="margin-bottom:0;">Best for long auto raid sessions — runs with anti-ban protection so it stays undetected even when farming for hours.<br><span style="color:#777; font-size:12px;">Tags: No Key, Anti Ban, Auto Raid, PC + Mobile</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/tIredz/Scripts/refs/heads/main/main.luau"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- HoHo Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits hoho hub auto quest auto fly zero lag">
+    <div class="script-title">Blox Fruits - HoHo Hub Script</div>
+    <div class="card-desc" style="margin-bottom:0;">Handles quests and island travel automatically — best pick if you want smooth, lag-free gameplay without touching the keyboard.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Quest, Auto Fly, Low Lag</span></div>
+    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Gravity Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits gravity hub auto farm sea 3 boss kill">
+    <div class="script-title">Blox Fruits - Gravity Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Optimized for Third Sea grinding — automatically kills bosses and farms enemies in the hardest and most rewarding zone.<br><span style="color:#777; font-size:12px;">Tags: No Key, Sea 3 Optimized, Boss Kill, Auto Farm</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Blue X Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits blue x hub max level grind exp farm">
+    <div class="script-title">Blox Fruits - Blue X Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Built specifically to reach the level 2800 cap as fast as possible — automates EXP farming on the most efficient enemy routes.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, EXP Farm, Level 2800</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Leaf Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits leaf hub mobile optimized android auto farm">
+    <div class="script-title">Blox Fruits - Leaf Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Lightweight and mobile-first — runs smoothly on low-end Android devices where heavier scripts lag or crash.<br><span style="color:#777; font-size:12px;">Tags: No Key, Mobile Optimized, Android, Auto Farm</span></div>
+    <div class="script-box">repeat wait() until game:IsLoaded() and game.Players.LocalPlayer loadstring(game:HttpGet("https://leaf-zeta.onrender.com/api/script"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Maru Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits maru hub marines specific team auto farm">
+    <div class="script-title">Blox Fruits - Maru Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Only script that sets your faction to Marines before auto farming — faster progression since Marine quests and spawns differ from Pirates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Marines Specific, Team Auto Farm</span></div>
+    <div class="script-box">getgenv().Team = "Marines" loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/KimP/refs/heads/main/MaruHub"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Astral Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits astral hub freeze trade auto accept anti scam">
+    <div class="script-title">Blox Fruits - Astral Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Made for traders — freeze trade locks a deal mid-offer so the other player cannot swap items and scam you.<br><span style="color:#777; font-size:12px;">Tags: No Key, Freeze Trade, Auto Accept Trade, Anti Scam</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/AstralHub/main/Main.lua", true))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Speed Hub X -->
+<div class="script-card script-entry" data-keywords="blox fruits speed hub x esp speed hack pvp">
+    <div class="script-title">Blox Fruits - Speed Hub X</div>
+    <div class="card-desc" style="margin-bottom:0;">PvP-focused script with ESP wallhack and speed boost — spot enemies through walls and close distance instantly.<br><span style="color:#777; font-size:12px;">Tags: No Key, ESP, Speed Hack, PvP</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Night Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits night hub fruit rain event ready auto collect">
+    <div class="script-title">Blox Fruits - Night Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Made for Fruit Rain events — detects every spawn instantly and queues teleports so you collect more than any manual player can.<br><span style="color:#777; font-size:12px;">Tags: No Key, Fruit Rain, Event Ready, Auto Collect</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/NIGHTHUBONTOP/Main/main/NightHub.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Quantum Onyx Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits quantum onyx hub universal all servers auto update">
+    <div class="script-title">Blox Fruits - Quantum Onyx Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Works on all server types and auto-updates after game patches — no manual fixes needed every time Blox Fruits updates.<br><span style="color:#777; font-size:12px;">Tags: No Key, Universal, All Servers, Auto Update</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/flashy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Delta Script -->
+<div class="script-card script-entry" data-keywords="blox fruits delta script pc android ios executor">
+    <div class="script-title">Blox Fruits - Delta Script</div>
+    <div class="card-desc" style="margin-bottom:0;">One script for all platforms inside Delta executor — beginners don't need separate versions for PC, Android, or iOS.<br><span style="color:#777; font-size:12px;">Tags: No Key, Delta Executor, PC + Android + iOS</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- jjSploit Script -->
+<div class="script-card script-entry" data-keywords="blox fruits jjsploit free executor beginner">
+    <div class="script-title">Blox Fruits - jjSploit Script</div>
+    <div class="card-desc" style="margin-bottom:0;">Fully compatible with jjSploit — the most popular free executor — easiest entry point for budget players new to scripting.<br><span style="color:#777; font-size:12px;">Tags: No Key, jjSploit, Free Executor, Beginner</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/thantzy/thanhub/refs/heads/main/thanv1"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Bacon Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits bacon hub max level grind fruit sniper auto collect">
+    <div class="script-title">Blox Fruits - Bacon Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Three features in one — max level grinder, fruit sniper, and auto collect — the most complete all-in-one script on this list.<br><span style="color:#777; font-size:12px;">Tags: No Key, Max Level Grind, Fruit Sniper, Auto Collect</span></div>
+    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/BaconScriptHub/BaconHub/main/New-BaconHub.lua.txt'))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Teddy Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits teddy hub auto kill instant teleport auto trade">
+    <div class="script-title">Blox Fruits - Teddy Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Best for players who do both combat and trading — auto kill handles fights while teleport lets you respond to trade requests from anywhere.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Kill, Instant Teleport, Auto Trade</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub.lua"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+<!-- Vxeze Hub -->
+<div class="script-card script-entry" data-keywords="blox fruits vxeze hub auto collect auto accept trade fruit inventory">
+    <div class="script-title">Blox Fruits - Vxeze Hub</div>
+    <div class="card-desc" style="margin-bottom:0;">Monitors the map for fruit spawns and collects them automatically — perfect for building a fruit inventory while AFK.<br><span style="color:#777; font-size:12px;">Tags: No Key, Auto Collect, Auto Accept Trade, Fruit Inventory</span></div>
+    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/VxezeHubMain"))()</div>
+    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+</div>
+
+                <!-- Blade Ball Script -->
+                <div class="script-card script-entry" data-keywords="blade ball redz hub auto parry block">
+                    <div class="script-title">Blade Ball - Redz Hub</div>
+                    <div class="card-desc" style="margin-bottom:0;">Features: Auto Parry, Spam Block Mode, Velocity Customizer, Skin Pack Visuals.</div>
+                    <div class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/REDZ711/Copy-Main/main/BladeBall"))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
+
+                <!-- Brookhaven Script -->
+                <div class="script-card script-entry" data-keywords="brookhaven infinite yield admin gui commands">
+                    <div class="script-title">Brookhaven RP - Infinite Yield Admin Command GUI</div>
+                    <div class="card-desc" style="margin-bottom:0;">Features: Local Flight, Noclip Toggle, Character Speed Hack, Fun Commands.</div>
+                    <div class="script-box">loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()</div>
+                    <button class="btn-copy" onclick="copyScript(this)">Copy Script Code</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. MOBILE EXECUTORS -->
+        <h2 class="section-title">Mobile Systems (Android & iOS)</h2>
+        <div class="executors-grid">
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Arceus X</span><span class="badge mobile">Mobile</span></div>
+                <div class="card-desc">Popular Android Roblox exploit with built-in community features.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Delta</span><span class="badge mobile">Mobile</span></div>
+                <div class="card-desc">Highly stable custom execution container for Android devices.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">CodeX</span><span class="badge mobile">Mobile</span></div>
+                <div class="card-desc">Smooth UI design with constant patches for Android and iOS bypass.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Cubix</span><span class="badge mobile">Mobile</span></div>
+                <div class="card-desc">Rising modern keyless/easy key executor built for mobile users.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Nebula</span><span class="badge mobile">Mobile</span></div>
+                <div class="card-desc">Secure environment optimized for executing heavy script setups on mobile.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+        </div>
+
+        <!-- 3. PC EXECUTORS -->
+        <h2 class="section-title">PC Systems (Windows)</h2>
+        <div class="executors-grid">
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Solara</span><span class="badge pc">Windows</span></div>
+                <div class="card-desc">Popular level 3 Windows executor providing stable execution framework.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Argon</span><span class="badge pc">Windows</span></div>
+                <div class="card-desc">Performance oriented injector focusing on custom script loading mechanics.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Zorara</span><span class="badge pc">Windows</span></div>
+                <div class="card-desc">Clean UI and optimized memory utilization for fluid background execution.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+            <div class="executor-card">
+                <div class="card-header"><span class="card-title">Xeno</span><span class="badge pc">Windows</span></div>
+                <div class="card-desc">Feature-rich environment wrapper built with external safety integrations.</div>
+                <a href="#" target="_blank" class="btn-link">Download</a>
+            </div>
+        </div>
+
+        <!-- 4. DISCONTINUED / LEGACY EXECUTORS -->
+        <h2 class="section-title legacy">Legacy Archives (Patched)</h2>
+        <div class="executors-grid">
+            <div class="executor-card" style="opacity: 0.35; filter: grayscale(1);">
+                <div class="card-header"><span class="card-title">Synapse X</span><span class="badge legacy">Offline</span></div>
+                <div class="card-desc">The legendary Level 7 PC executor. Patched permanently.</div>
+                <a href="#" class="btn-link disabled">Patched</a>
+            </div>
+            <div class="executor-card" style="opacity: 0.35; filter: grayscale(1);">
+                <div class="card-header"><span class="card-title">Krnl</span><span class="badge legacy">Offline</span></div>
+                <div class="card-desc">The most popular free PC injector of the legacy era. Patched.</div>
+                <a href="#" class="btn-link disabled">Patched</a>
+            </div>
+            <div class="executor-card" style="opacity: 0.35; filter: grayscale(1);">
+                <div class="card-header"><span class="card-title">Fluxus</span><span class="badge legacy">Offline</span></div>
+                <div class="card-desc">A premium cross-platform wrapper that officially closed services.</div>
+                <a href="#" class="btn-link disabled">Patched</a>
+            </div>
+            <div class="executor-card" style="opacity: 0.35; filter: grayscale(1);">
+                <div class="card-header"><span class="card-title">JJSploit</span><span class="badge legacy">Offline</span></div>
+                <div class="card-desc">The famous click button easy exploit engine from WeAreDevs.</div>
+                <a href="#" class="btn-link disabled">Patched</a>
+            </div>
+            <div class="executor-card" style="opacity: 0.35; filter: grayscale(1);">
+                <div class="card-header"><span class="card-title">Ev0n</span><span class="badge legacy">Offline</span></div>
+                <div class="card-desc">Highly utilized free tool from the past desktop bypass waves.</div>
+                <a href="#" class="btn-link disabled">Patched</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                searchScripts();
+            }
+        }
+
+        function searchScripts() {
+            const query = document.getElementById('scriptSearch').value.toLowerCase().trim();
+            const container = document.getElementById('scriptsResults');
+            const entries = document.querySelectorAll('.script-entry');
+            
+            if (query === "") {
+                container.style.display = "none";
+                return;
+            }
+
+            container.style.display = "flex";
+            let foundAny = false;
+
+            const oldMsg = document.getElementById('noScriptsMsg');
+            if (oldMsg) oldMsg.remove();
+
+            entries.forEach(entry => {
+                const keywords = entry.getAttribute('data-keywords');
+                if (keywords.includes(query)) {
+                    entry.style.display = "block";
+                    foundAny = true;
+                } else {
+                    entry.style.display = "none";
+                }
+            });
+
+            if (!foundAny) {
+                const noRes = document.createElement('div');
+                noRes.id = "noScriptsMsg";
+                noRes.className = "no-results";
+                noRes.innerHTML = `No tracking logs found for "<b>${query}</b>".`;
+                container.appendChild(noRes);
+            }
+        }
+
+        function copyScript(btn) {
+            const card = btn.parentElement;
+            const codeText = card.querySelector('.script-box').innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "✓ DEPLOYED TO CLIPBOARD";
+                btn.style.background = "linear-gradient(90deg, #3ddc84, #0078d4)";
+
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = "linear-gradient(90deg, #ff3b1f, #ff7300)";
+                }, 2000);
+            }).catch(err => {
+                alert("Failed to copy automatically.");
+            });
+        }
+    </script>
+</body>
+</html>
